@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Employee</title>
+</head>
+<body>
+    <h1>Add New Employee</h1>
+    <form method="post" th:object="${employee}" th:action="@{/save}">
+        <label>Name: <input type="text" th:field="*{name}" /></label><br>
+        <label>Email: <input type="email" th:field="*{email}" /></label><br>
+        <label>Date of Birth: <input type="date" th:field="*{dob}" /></label><br>
+        <label>Salary: <input type="number" step="0.01" th:field="*{salary}" /></label><br>
+        <label>Status: <input type="checkbox" th:field="*{status}" /></label><br>
+        <input type="submit" value="Save" />
+    </form>
+    <br>
+    <a href="/">Back to Employee List</a>
+</body>
+</html>
